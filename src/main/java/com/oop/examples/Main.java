@@ -33,7 +33,8 @@ public class Main {
     Person person1 = new Person("Jorge Gomez", 30, "jorge@example.com");
     Person person2 = new Person("Ana Garcia", 25, "ana@example.com");
     Person person3 = new Person("Raul Garcia", 0, "raul@example.com");
-    List<Person> originalMembers = new ArrayList<>(Arrays.asList(person1, person2, person3));
+    Person person4 = new Person("Jorge Marinoni", 43, "jorge@sharktech.com.ar");
+    List<Person> originalMembers = new ArrayList<>(Arrays.asList(person1, person2, person3,person4));
     Familiy family = new Familiy(originalMembers);
     System.out.println(family.getMembers());
   }

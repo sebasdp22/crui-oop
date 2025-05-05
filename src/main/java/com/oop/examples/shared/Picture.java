@@ -10,5 +10,4 @@ public class Picture {
     this.height = height;
     this.format = format;
   }
-
 }

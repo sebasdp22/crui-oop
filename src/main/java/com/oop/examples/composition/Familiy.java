@@ -8,13 +8,12 @@ import com.oop.examples.shared.Fotografiable;
 import com.oop.examples.shared.Picture;
 
 // Lawyer contains a Person
-class LawyerUsingComposition{
+class LawyerUsingComposition {
   private Person person;
   public String lawFirm;
 
   public LawyerUsingComposition(Person person, String lawFirm) {
     this.person = person;
-
   }
 
   public String getName() {
@@ -30,7 +29,8 @@ class LawyerUsingInheritance extends Person {
     this.lawFirm = lawFirm;
   }
 }
-public class Familiy implements Fotografiable  {
+
+public class Familiy implements Fotografiable {
   private List<Person> members;
 
   public Familiy() {
@@ -53,5 +53,4 @@ public class Familiy implements Fotografiable  {
   public Picture takePicture() {
     return this.members.get(0).takePicture();
   }
-
 }

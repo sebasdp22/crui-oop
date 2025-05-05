@@ -1,6 +1,6 @@
 # Java OOP Concepts Examples
 
-This project demonstrates core Object-Oriented Programming (OOP) concepts in Java through practical examples.
+A collection of examples demonstrating Object-Oriented Programming concepts in Java.
 
 ## Project Structure
 
@@ -11,10 +11,12 @@ src/
 │       └── com/
 │           └── oop/
 │               └── examples/
-│                   ├── abstraction/
-│                   ├── encapsulation/
+│                   ├── Main.java
+│                   ├── shared/
+│                   ├── tasks/
+│                   ├── composition/
 │                   ├── inheritance/
-│                   └── polymorphism/
+│                   └── encapsulation/
 └── test/
     └── java/
         └── com/
@@ -49,10 +51,13 @@ src/
 
 ## How to Run
 
-1. Make sure you have Java 11 and Maven installed
+1. Make sure you have Java and Maven installed
 2. Clone this repository
 3. Run `mvn clean install` to build the project
-4. Run `mvn test` to execute the test cases
+4. Run the Main class
+   ```
+   mvn exec:java -Dexec.mainClass="com.oop.examples.Main"
+   ```
 
 ## Examples
 

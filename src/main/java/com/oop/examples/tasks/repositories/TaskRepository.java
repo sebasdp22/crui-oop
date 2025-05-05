@@ -4,5 +4,5 @@ import java.util.List;
 import com.oop.examples.tasks.Task;
 
 public interface TaskRepository {
-    public List<Task> getAll();
+  public List<Task> getAll();
 }

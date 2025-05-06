@@ -36,8 +36,9 @@ public class Main {
     Person person4 = new Person("Jorge Marinoni", 43, "jorge@sharktech.com.ar");
     Person person5 = new Person("Otro Garcia", 0, "otro@example.com");
     Person person6 = new Person("Otro Garci 22", 0, "otro22@example.com");
+    Person person7 = new Person("Ignacio Campaniello", 28, "ignacio_campaniello@hotmail.com");
     List<Person> originalMembers =
-        new ArrayList<>(Arrays.asList(person1, person2, person3, person4, person5, person6));
+        new ArrayList<>(Arrays.asList(person1, person2, person3, person4, person5, person6, person7));
 
     Familiy family = new Familiy(originalMembers);
     System.out.println(family.getMembers());

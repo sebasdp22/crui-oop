@@ -12,7 +12,7 @@ public class Jiraffe extends Animal {
   // Implementation of abstract method from Animal class
   @Override
   public void makeSound() {
-    System.out.println(name + " says: ???!");
+    System.out.println(name + " says: ??????!");
   }
 
   @Override

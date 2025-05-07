@@ -42,6 +42,13 @@ public class Main {
 
     Familiy family = new Familiy(originalMembers);
     System.out.println(family.getMembers());
+
+    // Mostrar mayores de 18
+    System.out.println("\n=== Adults in the Family ===");
+    List<Person> adults = family.getAdults();
+    for (Person adult : adults) {
+      System.out.println(adult.getName() + " - " + adult.getAge());
+    }    
   }
 
   private static void runEncapsulationExample() {

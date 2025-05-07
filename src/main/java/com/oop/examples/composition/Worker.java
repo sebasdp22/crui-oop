@@ -14,6 +14,13 @@ public class Worker extends Person implements Fotografiable {
         this.salary = salary;
     }
 
+    // Constructor with parameters
+    public Worker(String name, int age, String email, String jobTitle, double salary) {
+        super(name, age, email);
+        this.jobTitle = jobTitle;
+        this.salary = salary;
+    }
+
     // Getters & Setters
     public String getJobTitle() {
         return this.jobTitle;
@@ -23,12 +30,15 @@ public class Worker extends Person implements Fotografiable {
         return this.salary;
     }
 
-    Public void setJob(String jobTitle, double salary) {
-        setJobTitle(jobTitle);
-        setSalary(salary);
+    Public boolean setNewJob(String jobTitle, double salary) {
+        boolean flag = setJobTitle(jobTitle);
+        if (flag) {
+            flag = setSalary(salary);
+        }
+        return flag;
     }
 
-    private void setJobTitle(String jobTitle) {
+    private boolean setJobTitle(String jobTitle) {
         if (jobTitle != null && !jobTitle.trim().isEmpty()) {
             this.jobTitle = jobTitle;
             return true;
@@ -36,12 +46,18 @@ public class Worker extends Person implements Fotografiable {
         return false;
     }
 
-    private void setSalary(double salary) {
+    private boolean setSalary(double salary) {
         if (salary >= 0) {
             this.salary = salary;
             return true;
         }
         return false;
+    }
+
+    // Overriding methods from Person class
+    @Override
+    public Picture takePicture() {
+        return super.takePicture();
     }
 
     @Override

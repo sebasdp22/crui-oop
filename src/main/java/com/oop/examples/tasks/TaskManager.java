@@ -1,6 +1,9 @@
 package com.oop.examples.tasks;
 
 import java.util.ArrayList;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 
 import com.oop.examples.tasks.repositories.TaskRepository;
@@ -9,7 +12,7 @@ import com.oop.examples.tasks.repositories.TaskRepository;
 // [] ir al super
 // [x] bañar al perro
 
-class TaskManager {
+public class TaskManager {
 
   private List<Task> tasks;
   private TaskRepository taskRepository;
@@ -39,5 +42,16 @@ class TaskManager {
 
   public void changeDescription(Task task, String description) {
     task.setDescription(description);
+  }
+
+  public void exportsTasksToFile(String filePath) {
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+      for (Task task : tasks) {
+        writer.write(task.toString());
+        writer.newLine();
+      }
+    } catch (IOException e) {
+      System.err.println("Error writing to file: " + e.getMessage());
+    }
   }
 }

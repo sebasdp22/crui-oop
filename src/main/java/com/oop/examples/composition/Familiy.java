@@ -49,6 +49,17 @@ public class Familiy implements Fotografiable {
     return this.members;
   }
 
+  public List<Person> getAdults() {
+    List<Person> adults = new ArrayList<>();
+    for (Person person : members) {
+      if (person.getAge() > 18) {
+        adults.add(person);
+      }
+    }
+    return adults;
+  }
+
+
   @Override
   public Picture takePicture() {
     return this.members.get(0).takePicture();

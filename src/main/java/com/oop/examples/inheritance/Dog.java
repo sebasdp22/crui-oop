@@ -19,6 +19,11 @@ public class Dog extends Animal {
   @Override
   public Picture takePicture() {
     return new Picture(100, 120, "jpg");
+  } 
+
+  @Override
+  public void eat() {
+    System.out.println(name + " está comiendo comida para perros.");
   }
 
   // Method specific to Dog class

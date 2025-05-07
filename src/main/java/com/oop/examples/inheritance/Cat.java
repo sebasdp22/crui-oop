@@ -20,7 +20,10 @@ public class Cat extends Animal {
   public Picture takePicture() {
     return new Picture(100, 100, "jpg");
   }
-
+  @Override
+  public void eat() {
+    System.out.println(name + " está comiendo");
+  }
   // Method specific to Cat class
   public void play() {
     System.out.println(name + " is playing with a ball!");

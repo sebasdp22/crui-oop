@@ -19,6 +19,11 @@ public abstract class Animal implements Fotografiable {
     System.out.println(name + " is sleeping...");
   }
 
+
+  public void eat() {
+    System.out.println(name + " esta comiendo.");
+  }
+
   public String getName() {
     return name;
   }

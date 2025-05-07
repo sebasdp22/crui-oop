@@ -53,4 +53,17 @@ public class Familiy implements Fotografiable {
   public Picture takePicture() {
     return this.members.get(0).takePicture();
   }
+
+  @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("Family: {");
+        for (Person member : members) {
+            sb.append(member.toString()).append(", ");
+        }
+        if (!members.isEmpty()) {
+            sb.setLength(sb.length() - 2);
+        }
+        sb.append("}");
+        return sb.toString();
+    }
 }

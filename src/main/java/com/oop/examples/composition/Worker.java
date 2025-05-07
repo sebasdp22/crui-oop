@@ -69,11 +69,12 @@ public class Worker extends Person implements Fotografiable {
     }
 
     // class methods
-    public void trabajar(int horas) {
+    public void work(int horas) {
         System.out.println("Trabajando " + horas + " horas...");
+        postWork(horas);
     }
 
-    private void postTrabajo(int horas) {
+    private void postWork(int horas) {
         System.out.println("Tras trabajar por " + horas + " horas, " + getName() + " ha generado $" + (horas * getSalary()) + ".");
     }
 }

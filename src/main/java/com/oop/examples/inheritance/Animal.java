@@ -26,4 +26,8 @@ public abstract class Animal implements Fotografiable {
   public int getAge() {
     return age;
   }
+
+  public String toString() {
+    return "Animal [name=" + name + ", age=" + age + "]";
+  }
 }

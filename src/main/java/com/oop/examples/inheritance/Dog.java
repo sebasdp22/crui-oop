@@ -38,4 +38,8 @@ public class Dog extends Animal {
   public void play(String toy, int duration) {
     System.out.println(name + " is playing with " + toy + " for " + duration + " minutes");
   }
+
+  public String toString() {
+    return "Dog [name=" + name + ", age=" + age + ", breed=" + breed + "]";
+  }
 }

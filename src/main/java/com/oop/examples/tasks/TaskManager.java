@@ -12,7 +12,7 @@ import com.oop.examples.tasks.repositories.TaskRepository;
 // [] ir al super
 // [x] bañar al perro
 
-class TaskManager {
+public class TaskManager {
 
   private List<Task> tasks;
   private TaskRepository taskRepository;

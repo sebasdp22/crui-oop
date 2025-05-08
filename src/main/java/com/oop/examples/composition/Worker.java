@@ -6,12 +6,16 @@ import com.oop.examples.shared.Picture;
 public class Worker extends Person implements Fotografiable {
     private String jobTitle;
     private double salary;
+    private double bank;
+    // Default values
+    private static final double DEFAULT_BANK = 0.0;
 
     // Constructor
     public Worker(Person person, String jobTitle, double salary) {
         super(person.getName(), person.getAge(), person.getEmail());
         this.jobTitle = jobTitle;
         this.salary = salary;
+        this.bank = DEFAULT_BANK;
     }
 
     // Constructor with parameters
@@ -19,6 +23,7 @@ public class Worker extends Person implements Fotografiable {
         super(name, age, email);
         this.jobTitle = jobTitle;
         this.salary = salary;
+        this.bank = DEFAULT_BANK;
     }
 
     // Getters & Setters
@@ -76,5 +81,6 @@ public class Worker extends Person implements Fotografiable {
 
     private void postWork(int horas) {
         System.out.println("Tras trabajar por " + horas + " horas, " + getName() + " ha generado $" + (horas * getSalary()) + ".");
+        this.bank += (horas * getSalary());
     }
 }

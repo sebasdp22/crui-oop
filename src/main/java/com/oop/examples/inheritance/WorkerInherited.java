@@ -3,7 +3,7 @@ package com.oop.examples.encapsulation;
 import com.oop.examples.shared.Fotografiable;
 import com.oop.examples.shared.Picture;
 
-public class Worker extends Person implements Fotografiable {
+public class WorkerInherited extends Person implements Fotografiable {
     private String jobTitle;
     private double salary;
     private double bank;
@@ -11,7 +11,7 @@ public class Worker extends Person implements Fotografiable {
     private static final double DEFAULT_BANK = 0.0;
 
     // Constructor
-    public Worker(Person person, String jobTitle, double salary) {
+    public WorkerInherited(Person person, String jobTitle, double salary) {
         super(person.getName(), person.getAge(), person.getEmail());
         this.jobTitle = jobTitle;
         this.salary = salary;
@@ -19,7 +19,7 @@ public class Worker extends Person implements Fotografiable {
     }
 
     // Constructor with parameters
-    public Worker(String name, int age, String email, String jobTitle, double salary) {
+    public WorkerInherited(String name, int age, String email, String jobTitle, double salary) {
         super(name, age, email);
         this.jobTitle = jobTitle;
         this.salary = salary;

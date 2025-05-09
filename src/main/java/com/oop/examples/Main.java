@@ -70,9 +70,9 @@ public class Main {
     // Using Dog-specific methods
     dog.fetch();
 
-     Bird bird = new Bird("Piolín", 1, "Canario");
-  bird.makeSound();
-  bird.fly();
+    Bird bird = new Bird("Piolín", 1, "Canario");
+    bird.makeSound();
+    bird.fly();
   
   }
 
@@ -86,6 +86,18 @@ public class Main {
     animal = new Cat("Filomena", 2, "Black");
     animal.makeSound(); // Calls Cat's implementation
     animal.sleep(); // Calls Animal's implementation
+ 
+    animal = new Bird("Piolín", 1, "Canario");
+    animal.makeSound();
+    animal.sleep();
+    
+    animal = new Eagle("Águila Imperial", 6, "Águila");
+    animal.makeSound();  // Calls Eagle's implementation
+    animal.sleep();      // Calls Animal's implementation
+
+    animal = new Hornero("Hornero Grande", 3, "Hornero");
+    animal.makeSound();  // Calls Hornero's implementation
+    animal.sleep();      // Calls Animal's implementation// Calls Bird's implementation
   }
 
   private static void takePictures() {

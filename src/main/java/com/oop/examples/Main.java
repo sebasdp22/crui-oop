@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.oop.examples.composition.Familiy;
 import com.oop.examples.encapsulation.Person;
+import com.oop.examples.encapsulation.Hijos;
 import com.oop.examples.inheritance.Dog;
 import com.oop.examples.shared.Fotografiable;
 import com.oop.examples.inheritance.Animal;
@@ -23,6 +24,7 @@ public class Main {
     Main.runEncapsulationExample();
     Main.runInheritanceExample();
     Main.runPolymorphismExample();
+    Main.runHijosExample();
 
     Main.takePictures();
   }
@@ -37,8 +39,8 @@ public class Main {
     Person person5 = new Person("Otro Garcia", 0, "otro@example.com");
     Person person6 = new Person("Otro Garci 22", 0, "otro22@example.com");
     Person persona7 = new Person("Cosme Fulanito", 33, "raul@example.com");
-    List<Person> originalMembers =
-        new ArrayList<>(Arrays.asList(person1, person2, person3, person4, person5, person6, persona7));
+    List<Person> originalMembers = new ArrayList<>(
+        Arrays.asList(person1, person2, person3, person4, person5, person6, persona7));
 
     Familiy family = new Familiy(originalMembers);
     System.out.println(family.getMembers());
@@ -81,6 +83,30 @@ public class Main {
     animal = new Cat("Filomena", 2, "Black");
     animal.makeSound(); // Calls Cat's implementation
     animal.sleep(); // Calls Animal's implementation
+  }
+
+  private static void runHijosExample() {
+    // Ejemplo de uso de la clase Hijos
+    System.out.println("\n=== Ejemplo de la clase Hijos ===");
+
+    // Crear un hijo
+    Hijos hijo = new Hijos("Sebastian Mussi", 10, "sebas@email.com", "fútbol", "Racing", false);
+
+    // Mostrar información inicial
+    System.out.println("Información del hijo:");
+    System.out.println("Nombre: " + hijo.getName());
+    System.out.println("Deporte: " + hijo.getTipePlay());
+    System.out.println("Club: " + hijo.getClub());
+    System.out.println("¿Tarea realizada?: " + hijo.isTareaRealizada());
+
+    // Probar el método realizoTarea
+    System.out.println("\nProbando realizoTarea:");
+    hijo.realizoTarea();
+
+    // Cambiar el estado de la tarea
+    System.out.println("\nDespués de realizar la tarea:");
+    hijo.setTareaRealizada(true);
+    hijo.realizoTarea();
   }
 
   private static void takePictures() {

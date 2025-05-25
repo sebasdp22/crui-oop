@@ -5,13 +5,16 @@ import javax.print.attribute.standard.MediaSize.NA;
 public class Hijos extends Person {
     private String tipePlay;
     private String club;
+    private boolean tareaRealizada;
 
-    public Hijos(String name, int age, String email, String tipePlay, String club) {
+    public Hijos(String name, int age, String email, String tipePlay, String club, boolean tareaRealizada) {
         super(name, age, email);
         this.tipePlay = tipePlay;
         this.club = club;
+        this.tareaRealizada = tareaRealizada;
     }
 
+    // Getters
     public String getTipePlay() {
         return tipePlay;
     }
@@ -20,14 +23,21 @@ public class Hijos extends Person {
         return club;
     }
 
-    public void realizoTarea(String name) {
-        boolean okTarea;
-        if (okTarea = true) {
-            System.out.println("Podes hacer deporte " + name);
-        } else {
-            System.out.println("No podes hacer deporte " + name);
-        }
-
+    public boolean isTareaRealizada() {
+        return tareaRealizada;
     }
 
+    // Setters
+    public void setTareaRealizada(boolean tareaRealizada) {
+        this.tareaRealizada = tareaRealizada;
+    }
+
+    // Métodos de comportamiento
+    public void realizoTarea() {
+        if (tareaRealizada) {
+            System.out.println("Podes hacer deporte");
+        } else {
+            System.out.println("No podes hacer deporte");
+        }
+    }
 }

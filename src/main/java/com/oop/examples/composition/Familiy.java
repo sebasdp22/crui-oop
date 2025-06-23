@@ -21,15 +21,6 @@ class LawyerUsingComposition {
   }
 }
 
-class LawyerUsingInheritance extends Person {
-  public String lawFirm;
-
-  public LawyerUsingInheritance(String name, int age, String lawFirm) {
-    super(name, age, "lawyer@example.com");
-    this.lawFirm = lawFirm;
-  }
-}
-
 public class Familiy implements Fotografiable {
   private List<Person> members;
 
@@ -59,22 +50,21 @@ public class Familiy implements Fotografiable {
     return adults;
   }
 
-
   @Override
   public Picture takePicture() {
     return this.members.get(0).takePicture();
   }
 
   @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder("Family: {");
-        for (Person member : members) {
-            sb.append(member.toString()).append(", ");
-        }
-        if (!members.isEmpty()) {
-            sb.setLength(sb.length() - 2);
-        }
-        sb.append("}");
-        return sb.toString();
+  public String toString() {
+    StringBuilder sb = new StringBuilder("Family: {");
+    for (Person member : members) {
+      sb.append(member.toString()).append(", ");
     }
+    if (!members.isEmpty()) {
+      sb.setLength(sb.length() - 2);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
 }

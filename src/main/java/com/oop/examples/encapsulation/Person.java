@@ -32,6 +32,7 @@ public class Person implements Fotografiable {
       this.name = name;
     }
   }
+
   public String getLastName() {
     return lastName;
   }
@@ -72,6 +73,14 @@ public class Person implements Fotografiable {
 
   @Override
   public String toString() {
-    return "Person [name=" + name + ", lastName=" + lastName + ",  age=" + age + ", email=" + email + "]\n";
+    return "Person [name="
+        + name
+        + ", lastName="
+        + lastName
+        + ",  age="
+        + age
+        + ", email="
+        + email
+        + "]\n";
   }
 }

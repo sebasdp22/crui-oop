@@ -30,14 +30,14 @@ public class Main {
   private static void runCompositionExample() {
     // Composition example
     System.out.println("\n=== Composition Example ===");
-    Person person1 = new Person("Jorge", "Gomez", 30, "jorge@example.com");
-    Person person2 = new Person("Ana", "Garcia", 25, "ana@example.com");
-    Person person3 = new Person("Raul", "Garcia", 0, "raul@example.com");
-    Person person4 = new Person("Jorge", "Marinoni", 43, "jorge@sharktech.com.ar");
-    Person person5 = new Person("Otro", "Garcia", 0, "otro@example.com");
-    Person person6 = new Person("Otro", "Garci 22", 0, "otro22@example.com");
+    Person person1 = new Person("Jorge", 30, "jorge@example.com", "Gomez");
+    Person person2 = new Person("Ana", 25, "ana@example.com", "Garcia");
+    Person person3 = new Person("Raul", 0, "raul@example.com", "Garcia");
+    Person person4 = new Person("Jorge", 43, "jorge@sharktech.com.ar", "Marinoni");
+    Person person5 = new Person("Otro", 0, "otro@example.com", "Garcia");
+    Person person6 = new Person("Otro", 22, "otro22@example.com", "Garci");
     List<Person> originalMembers =
-        new ArrayList<>(Arrays.asList(person1, person2, person3, person4, person5, person6, persona7));
+        new ArrayList<>(Arrays.asList(person1, person2, person3, person4, person5, person6));
 
     Familiy family = new Familiy(originalMembers);
     System.out.println(family.getMembers());
@@ -47,13 +47,13 @@ public class Main {
     List<Person> adults = family.getAdults();
     for (Person adult : adults) {
       System.out.println(adult.getName() + " - " + adult.getAge());
-    }    
+    }
   }
 
   private static void runEncapsulationExample() {
     // Encapsulation example
     System.out.println("=== Encapsulation Example ===");
-    Person person = new Person("John", "Doe", 30, "john@example.com");
+    Person person = new Person("John", 30, "john@example.com", "Doe");
     person.displayInfo();
 
     // Try to set invalid data
@@ -93,13 +93,13 @@ public class Main {
     // Generics
     List<Fotografiable> fotografiables = new ArrayList<Fotografiable>();
 
-    fotografiables.add(new Person("John", "Doe", 30, "john@example.com"));
+    fotografiables.add(new Person("John", 30, "john@example.com", "Doe"));
     fotografiables.add(
         new Familiy(
             new ArrayList<Person>(
                 Arrays.asList(
-                    new Person("John", "Doe", 30, "john@example.com"),
-                    new Person("Ana", "Garcia", 25, "ana@example.com")))));
+                    new Person("John", 30, "john@example.com", "Doe"),
+                    new Person("Ana", 25, "ana@example.com", "Garcia")))));
     fotografiables.add(new Dog("Buddy", 3, "Golden Retriever"));
     fotografiables.add(new Cat("Filomena", 2, "Black"));
 

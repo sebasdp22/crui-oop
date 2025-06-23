@@ -1,8 +1,25 @@
-# Java OOP Concepts Examples
+# Java Repository for Software Engineering course
+
+## PedidosYa example
+
+To run the PedidosYa example, you need to have Java and Maven installed.
+
+Then, run the following command:
+
+```
+mvn clean install
+mvn exec:java -Dexec.mainClass="com.pedidosya.PedidosYaFlow"
+```
+
+## Uber example
+
+TODO: Add the details here
+
+## Java OOP Examples
 
 A collection of examples demonstrating Object-Oriented Programming concepts in Java.
 
-## Project Structure
+### Project Structure
 
 ```
 src/
@@ -25,7 +42,7 @@ src/
                     └── tests/
 ```
 
-## OOP Concepts Covered
+### OOP Concepts Covered
 
 1. **Encapsulation**
    - Private fields with public getters/setters
@@ -62,5 +79,3 @@ src/
 ## Examples
 
 Each concept is demonstrated through practical examples with corresponding test cases. The examples are designed to be simple yet comprehensive, making it easy to understand the core OOP principles. 
-
-EDIT JORGE

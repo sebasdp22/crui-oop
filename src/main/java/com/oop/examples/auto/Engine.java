@@ -1,23 +1,21 @@
 package com.oop.examples.auto;
 
 public class Engine {
-    private String type;
-    private int power;
-    private boolean isOn;
+  private String type;
+  private int power;
+  private boolean isOn;
 
+  public Engine(String type, int power) {
+    this.type = type;
+    this.power = power;
+    this.isOn = false;
+  }
 
-    public Engine(String type, int power) {
-        this.type = type;
-        this.power = power;
-        this.isOn = false;
-    }
+  protected void start() {
+    isOn = true;
+  }
 
-    protected void start(){
-        isOn = true;
-    }
-
-    protected void stop(){
-        isOn = false;
-    }
-
+  protected void stop() {
+    isOn = false;
+  }
 }

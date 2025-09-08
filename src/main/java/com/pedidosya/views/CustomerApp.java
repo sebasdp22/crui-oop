@@ -2,7 +2,6 @@ package com.pedidosya.views;
 
 import com.pedidosya.models.Customer;
 
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;

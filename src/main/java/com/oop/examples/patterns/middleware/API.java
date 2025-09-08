@@ -16,12 +16,7 @@ public class API {
         };
 
     // chain of responsibility
-
-    Handler middleware =
-        LoggingMiddleware.getInstance(new ErrorsMiddleware(new AuthMiddleware(handler)));
-
-    LoggingMiddleware anInstance = LoggingMiddleware.getInstance(null);
-    LoggingMiddleware otherInstance = LoggingMiddleware.getInstance(null);
+    Handler middleware = new LoggingMiddleware(new ErrorsMiddleware(new AuthMiddleware(handler)));
 
     Request request = new Request("GET", "/api/v1/users", "valid-token", "");
     Response response = new Response(200, "");

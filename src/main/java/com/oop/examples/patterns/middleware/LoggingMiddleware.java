@@ -1,17 +1,9 @@
 package com.oop.examples.patterns.middleware;
 
 public class LoggingMiddleware extends Middleware {
-  static LoggingMiddleware instance = null;
 
-  private LoggingMiddleware(Handler next) {
+  public LoggingMiddleware(Handler next) {
     super(next);
-  }
-
-  public static LoggingMiddleware getInstance(Handler next) {
-    if (instance == null) {
-      instance = new LoggingMiddleware(next);
-    }
-    return instance;
   }
 
   @Override

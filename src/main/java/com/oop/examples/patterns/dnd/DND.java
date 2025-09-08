@@ -6,16 +6,20 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Programa inicial para refactorización con patrones de diseño. Ejecutar usando el comando: mvn
- * exec:java -Dexec.mainClass="com.oop.examples.patterns.dnd.DND"
+ * Programa inicial para refactorización con patrones de diseño.
+ *
+ * <p>Ejecutar usando el comando:
+ *
+ * <p>mvn exec:java -Dexec.mainClass="com.oop.examples.patterns.dnd.DND"
  */
 public class DND {
 
   public static void main(String[] args) {
     // Configuración del héroe
+
     Weapon sword = new Weapon("Sword", 12);
     Armour leather = new Armour("Leather", 5);
-    Hero hero = new Hero("Artemis", 20, 8, 100);
+    Hero hero = new Hero("Artemis", "elf", 20, 8, 180);
     hero.setWeapon(sword);
     hero.setArmour(leather);
 
@@ -71,15 +75,17 @@ public class DND {
 
   static class Hero {
     private String name;
+    private String type; // elf, human, dwarf, warrior
     private int baseAttack;
     private int baseDefense;
     private int health;
     private Weapon weapon;
     private Armour armour;
-    private Random rng = new Random();
+    private Random random = new Random();
 
-    public Hero(String name, int baseAttack, int baseDefense, int health) {
+    public Hero(String name, String type, int baseAttack, int baseDefense, int health) {
       this.name = name;
+      this.type = type;
       this.baseAttack = baseAttack;
       this.baseDefense = baseDefense;
       this.health = health;
@@ -97,6 +103,10 @@ public class DND {
       return name;
     }
 
+    public String getType() {
+      return type;
+    }
+
     public int getHealth() {
       return health;
     }
@@ -107,6 +117,9 @@ public class DND {
 
     public int getAttack() {
       int weaponAtk = (weapon != null) ? weapon.getAttack() : 0;
+      if ("warrior".equals(type)) {
+        weaponAtk += 2;
+      }
       return baseAttack + weaponAtk;
     }
 
@@ -115,20 +128,19 @@ public class DND {
       return baseDefense + armourDef;
     }
 
-    public int takeDamage(int raw) {
-      int mitigated = Math.max(1, raw - (getDefense() / 2));
+    public int takeDamage(int damage) {
+      int mitigated = Math.max(1, damage - (getDefense() / 2));
       health = Math.max(0, health - mitigated);
       return mitigated;
     }
 
     public int hit(Enemy target) {
-      // “Crítico” simplón con if/else y números mágicos (ideal para Strategy)
       int atk = getAttack();
-      if (rng.nextInt(100) < 10) { // 10% crit
+      if (random.nextInt(100) < 10) { // 10% critical hit
         atk += 8;
       }
-      // Dragon es “resistente” de forma hardcodeada (ideal para Chain of Responsibility / Strategy)
-      if ("dragon".equals(target.getKind())) {
+      // Dragon es resistente a los no elfos
+      if ("dragon".equals(target.getKind()) && !"elf".equals(type)) {
         atk -= 4;
       }
       atk = Math.max(1, atk);
@@ -208,15 +220,15 @@ public class DND {
       return def;
     }
 
-    public int takeDamage(int raw) {
-      int mitigated = Math.max(1, raw - (getDefense() / 2));
+    public int takeDamage(int damage) {
+      int mitigated = Math.max(1, damage - (getDefense() / 2));
       health = Math.max(0, health - mitigated);
       return mitigated;
     }
 
     public int hit(Hero target) {
       int atk = getAttack();
-      // “Furia” condicional (más números mágicos para refactor)
+      // Los orcos pueden tener un ataque extra el 20% de las veces
       if ("orc".equals(kind) && rng.nextInt(100) < 20) {
         atk += 6;
       }

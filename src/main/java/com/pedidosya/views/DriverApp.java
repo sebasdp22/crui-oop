@@ -1,12 +1,8 @@
 package com.pedidosya.views;
 
-import java.util.Date;
-import java.util.UUID;
-
 import com.pedidosya.models.Driver;
 import com.pedidosya.models.Order;
 import com.pedidosya.models.OrderStatus;
-import com.pedidosya.models.OrderUpdate;
 
 public class DriverApp {
 

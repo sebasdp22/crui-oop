@@ -20,10 +20,8 @@ public class API {
     Handler middleware =
         LoggingMiddleware.getInstance(new ErrorsMiddleware(new AuthMiddleware(handler)));
 
-    LoggingMiddleware.getInstance(null);
-    LoggingMiddleware.getInstance(null);
-    LoggingMiddleware.getInstance(null);
-    LoggingMiddleware.getInstance(null);
+    LoggingMiddleware anInstance = LoggingMiddleware.getInstance(null);
+    LoggingMiddleware otherInstance = LoggingMiddleware.getInstance(null);
 
     Request request = new Request("GET", "/api/v1/users", "valid-token", "");
     Response response = new Response(200, "");

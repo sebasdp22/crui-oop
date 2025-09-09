@@ -28,7 +28,7 @@ public class RandomDNDFactory implements CharacterFactory, EquipmentFactory {
     // Generates a random hero with 50% chance of having a weapon and armour each.
     @Override
     public static Hero createRandomHero() {
-        return createRandomHero(nextBoolean(), nextBoolean());
+        return createRandomHero(RNG.nextBoolean(), RNG.nextBoolean());
     }
 
     public static Hero createRandomHero(boolean withWeapon, boolean withArmour) {

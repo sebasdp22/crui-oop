@@ -13,4 +13,11 @@ static final class RNG {
     public static int nextInt(int bound) {
       return RANDOM.nextInt(bound);
     }
+
+    /**
+     * Generates a random boolean value.
+     */
+    public static boolean nextBoolean() {
+        return RANDOM.nextBoolean();
+    }
 }

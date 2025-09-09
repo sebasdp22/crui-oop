@@ -9,5 +9,8 @@
         "cmd": "mvn googleformatter:format"
       }
     ]
+  },
+  "[java]": {
+    "editor.defaultFormatter": "Oracle.oracle-java"
   }
 }

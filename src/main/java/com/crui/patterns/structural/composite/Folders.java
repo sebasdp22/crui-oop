@@ -18,6 +18,10 @@ public class Folders {
     public String getName() {
       return this.name;
     }
+
+    public List<File> getFiles() {
+      return this.files;
+    }
   }
 
   class File {

@@ -53,10 +53,10 @@ public class Fight {
       }
 
       // Enemigos atacan si viven
-      for (Enemy e : enemies) {
-        if (e.isAlive() && hero.isAlive()) {
-          int dealt = e.hit(hero);
-          listener.enemyHits(e, hero, dealt);
+      for (Enemy enemy : enemies) {
+        if (enemy.isAlive() && hero.isAlive()) {
+          int dealt = enemy.hit(hero);
+          listener.enemyHits(enemy, hero, dealt);
         }
       }
       listener.printStatus(this);

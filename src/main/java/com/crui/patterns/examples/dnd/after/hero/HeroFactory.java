@@ -16,7 +16,7 @@ public class HeroFactory {
     Weapon sword = createRandomWeapon();
     Armour leather = createRandomArmour();
 
-    int baseAttack = Dice.range(BASE, BASE + RANGE);
+    int baseAttack = Dice.range(10, 20);
     int baseDefense = Dice.range(BASE, BASE + RANGE);
     int health = Dice.range(BASE * 30, BASE * 30 + RANGE * 10);
     Kinds kind = Kinds.values()[Dice.range(0, Kinds.values().length - 1)];

@@ -20,9 +20,6 @@ public class Hero extends Character {
 
   public int getAdditionalAttack(Character target) {
     int base = this.weapon != null ? this.weapon.getAttack() : 0;
-    if ("warrior".equals(super.getKind())) {
-      return base + 2;
-    }
     if ("dragon".equals(target.getKind()) && !"elf".equals(target.getKind())) {
       base += 4;
     }

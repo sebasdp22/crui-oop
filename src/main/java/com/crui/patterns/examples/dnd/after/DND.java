@@ -6,8 +6,6 @@ import com.crui.patterns.examples.dnd.after.enemy.Enemy;
 import com.crui.patterns.examples.dnd.after.enemy.EnemyFactory;
 import com.crui.patterns.examples.dnd.after.fight.Fight;
 import com.crui.patterns.examples.dnd.after.fight.FightFactory;
-import com.crui.patterns.examples.dnd.after.hero.Hero;
-import com.crui.patterns.examples.dnd.after.hero.HeroFactory;
 import com.crui.patterns.examples.dnd.after.util.ConsoleView;
 import com.crui.patterns.examples.dnd.after.util.FightListeners;
 import com.crui.patterns.examples.dnd.after.util.MetricsCollector;

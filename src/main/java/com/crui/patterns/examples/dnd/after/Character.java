@@ -4,7 +4,7 @@ import com.crui.patterns.examples.dnd.after.util.Dice;
 
 public abstract class Character {
   private String name;
-  private String kind; // elf, human, dwarf, warrior
+  private String kind;
   private int baseAttack;
   private int baseDefense;
   private int health;

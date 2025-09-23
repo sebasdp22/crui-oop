@@ -16,7 +16,6 @@ public class DND {
 
   public static void main(String[] args) {
     // Configuración del héroe
-
     Weapon sword = new Weapon("Sword", 12);
     Armour leather = new Armour("Leather", 5);
     Hero hero = new Hero("Artemis", "elf", 20, 8, 180);

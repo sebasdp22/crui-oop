@@ -5,7 +5,10 @@ import java.util.*;
 /**
  * Contestar a continuación las siguientes preguntas: - Qué patrón de diseño podés identificar en el
  * código dado? - Qué patrón de diseño podrías agregar para mejorar el código?
- *
+ * los patrones que se pueden identificar aca son: el strategy que se utiliza para el procsamiento de pagos 
+ * y el observer que se utiliza para observar y notificar eventos de una orden pagada. el patron que se le pdoria agregar para mejorar 
+ * este codigo seria el adapter para poder integrar la api externa sin modificarla.
+ * 
  * <p>Implementar UN patrón adicional para mejorar el código.
  */
 public class Checkout {
@@ -27,10 +30,12 @@ public class Checkout {
     orden.addListener(new EmailListener());
     orden.addListener(new AnalyticsListener());
 
-    String paymentType = "card"; // puede ser "cash", "card", "mercado-pago"
+    String paymentType = "mercado-pago"; // puede ser "cash", "card", "mercado-pago"
     MedioDePago medioDePago;
     if ("card".equalsIgnoreCase(paymentType)) {
       medioDePago = new PagoTarjeta("Juan Perez", "4111111111111111");
+    } else if ("mercado-pago".equalsIgnoreCase(paymentType)) {
+      medioDePago = new PagoMercadoPagoAdapter(new MercadoPagoAPI());
     } else {
       medioDePago = new PagoEfectivo();
     }
@@ -212,6 +217,22 @@ public class Checkout {
     private String last4() {
       if (cardNumber == null || cardNumber.length() < 4) return "????";
       return cardNumber.substring(cardNumber.length() - 4);
+    }
+  }
+
+  // === Adapter para MercadoPagoAPI ===
+  static class PagoMercadoPagoAdapter implements MedioDePago {
+    private final MercadoPagoAPI mercadoPagoAPI;
+
+    public PagoMercadoPagoAdapter(MercadoPagoAPI mercadoPagoAPI) {
+      this.mercadoPagoAPI = mercadoPagoAPI;
+    }
+
+    @Override
+    public boolean pay(double amount) {
+      int amountInCents = (int) Math.round(amount * 100);
+      System.out.println("[Adapter] Adaptando pago a MercadoPagoAPI...");
+      return mercadoPagoAPI.runPayment(amountInCents);
     }
   }
 
